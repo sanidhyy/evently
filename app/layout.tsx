@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import type { PropsWithChildren } from "react";
+
 import "./globals.css";
 
 const poppins = Poppins({
@@ -13,11 +15,7 @@ export const metadata: Metadata = {
   description: "Evently is a platform for event management.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function AppLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
       <body className={poppins.variable}>{children}</body>
