@@ -1,9 +1,12 @@
-import { SignedOut } from "@clerk/nextjs";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+
+import { MobileNav } from "./mobile-nav";
+import { NavItems } from "./nav-items";
 
 export const Header = () => {
   return (
@@ -18,7 +21,17 @@ export const Header = () => {
           />
         </Link>
 
+        <SignedIn>
+          <nav className="md:flex-between hidden w-full max-w-xs">
+            <NavItems />
+          </nav>
+        </SignedIn>
+
         <div className="flex w-32 justify-end gap-3">
+          <SignedIn>
+            <UserButton afterSignOutUrl="/" />
+            <MobileNav />
+          </SignedIn>
           <SignedOut>
             <Link
               href="/sign-in"
