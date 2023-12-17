@@ -20,6 +20,7 @@
     "mongodb": "^6.3.0",
     "mongoose": "^8.0.3",
     "next": "14.0.4",
+    "query-string": "^8.1.0",
     "react": "^18",
     "react-dom": "^18",
     "svix": "^1.15.0",
