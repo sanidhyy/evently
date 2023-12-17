@@ -22,6 +22,7 @@
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
+    "svix": "^1.15.0",
     "tailwind-merge": "^2.1.0",
     "tailwindcss-animate": "^1.0.7",
     "uploadthing": "^6.1.0"
