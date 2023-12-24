@@ -1,9 +1,10 @@
-import { Collection } from "@/components/shared/collection";
-import { Button, buttonVariants } from "@/components/ui/button";
-import { getEventsByUser } from "@/lib/actions/event.actions";
-import { cn } from "@/lib/utils";
 import { auth } from "@clerk/nextjs";
 import Link from "next/link";
+
+import { Collection } from "@/components/shared/collection";
+import { buttonVariants } from "@/components/ui/button";
+import { getEventsByUser } from "@/lib/actions/event.actions";
+import { cn } from "@/lib/utils";
 
 const Profile = async () => {
   const { sessionClaims } = auth();
