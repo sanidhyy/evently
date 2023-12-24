@@ -1,9 +1,11 @@
 import { auth } from "@clerk/nextjs";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 import { IEvent } from "@/lib/database/models/event.model";
 import { formatDateTime } from "@/lib/utils";
+
+import { DeleteConfirmation } from "./delete-confirmation";
 
 type CardProps = {
   event: IEvent;
@@ -25,6 +27,7 @@ export const Card = ({ event, hasOrderLink, hidePrice }: CardProps) => {
           backgroundImage: `url(${event.imageUrl})`,
         }}
         className="flex-center flex-grow bg-gray-50 bg-cover bg-center text-gray-500"
+        tabIndex={-1}
       />
 
       {isEventCreator && !hidePrice && (
@@ -37,6 +40,8 @@ export const Card = ({ event, hasOrderLink, hidePrice }: CardProps) => {
               height={20}
             />
           </Link>
+
+          <DeleteConfirmation eventId={event._id} />
         </div>
       )}
 
@@ -68,7 +73,7 @@ export const Card = ({ event, hasOrderLink, hidePrice }: CardProps) => {
           </p>
 
           {hasOrderLink && (
-            <Link href={`/orders?eventId=${event._id}`} className="flex gap-2">
+            <div className="flex gap-2">
               <p className="text-primary-500">Order Details</p>
               <Image
                 src="/assets/icons/arrow.svg"
@@ -76,7 +81,7 @@ export const Card = ({ event, hasOrderLink, hidePrice }: CardProps) => {
                 width={10}
                 height={10}
               />
-            </Link>
+            </div>
           )}
         </div>
       </Link>
