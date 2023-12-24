@@ -4,17 +4,21 @@ import Link from "next/link";
 import { Collection } from "@/components/shared/collection";
 import { buttonVariants } from "@/components/ui/button";
 import { getEventsByUser } from "@/lib/actions/event.actions";
+import { getOrdersByUser } from "@/lib/actions/order.actions";
 import { cn } from "@/lib/utils";
+import { IOrder } from "@/lib/database/models/order.model";
 
 const Profile = async () => {
   const { sessionClaims } = auth();
   const userId = sessionClaims?.userId as string;
 
+  const orders = await getOrdersByUser({ userId, page: 1 });
   const organizedEvents = await getEventsByUser({ userId, page: 1 });
+
+  const orderedEvents = orders?.data.map((order: IOrder) => order.event) || [];
 
   return (
     <>
-      {/* TODO: My Tickets */}
       <section className="bg-primary-50 bg-dotted-pattern bg-cover bg-center py-5 md:py-10">
         <div className="wrapper flex items-center justify-center sm:justify-between">
           <h3 className="h3-bold text-center sm:text-left">My Tickets</h3>
@@ -32,9 +36,9 @@ const Profile = async () => {
         </div>
       </section>
 
-      {/* <section className="wrapper my-8">
+      <section className="wrapper my-8">
         <Collection
-          data={events?.data}
+          data={orderedEvents}
           emptyTitle="No events tickets purchased yet."
           emptyStateSubtext="No worries - plenty of exciting events to explore!"
           collectionType="My_Tickets"
@@ -43,9 +47,8 @@ const Profile = async () => {
           urlParamName="ordersPage"
           total={2}
         />
-      </section> */}
+      </section>
 
-      {/* TODO: Events Organised */}
       <section className="bg-primary-50 bg-dotted-pattern bg-cover bg-center py-5 md:py-10">
         <div className="wrapper flex items-center justify-center sm:justify-between">
           <h3 className="h3-bold text-center sm:text-left">Events Organized</h3>
