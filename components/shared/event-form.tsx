@@ -22,6 +22,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { eventDefaultValues } from "@/constants";
 import { createEvent } from "@/lib/actions/event.actions";
+import { IEvent } from "@/lib/database/models/event.model";
 import { useUploadThing } from "@/lib/uploadthing";
 import { eventFormSchema } from "@/lib/validator";
 
@@ -33,11 +34,20 @@ import "react-datepicker/dist/react-datepicker.css";
 type EventFormProps = {
   userId: string;
   type: "Create" | "Update";
+  event?: IEvent;
+  eventId?: string;
 };
 
-export const EventForm = ({ userId, type }: EventFormProps) => {
+export const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
   const [files, setFiles] = useState<File[]>([]);
-  const initialValues = eventDefaultValues;
+  const initialValues =
+    event && type === "Update"
+      ? {
+          ...event,
+          startDateTime: new Date(event.startDateTime),
+          endDateTime: new Date(event.endDateTime),
+        }
+      : eventDefaultValues;
   const router = useRouter();
 
   const form = useForm<z.infer<typeof eventFormSchema>>({
