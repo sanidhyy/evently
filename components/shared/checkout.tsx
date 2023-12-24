@@ -1,5 +1,5 @@
 import { loadStripe } from "@stripe/stripe-js";
-import { useEffect } from "react";
+import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { checkoutOrder } from "@/lib/actions/order.actions";
@@ -14,20 +14,11 @@ export const Checkout = ({
   event: IEvent;
   userId: string;
 }) => {
-  useEffect(() => {
-    const query = new URLSearchParams(window.location.search);
-    if (query.get("success")) {
-      console.log("Order placed! You will receive an email confirmation.");
-    }
-
-    if (query.get("canceled")) {
-      console.log(
-        "Order canceled -- continue to shop around and checkout when you’re ready."
-      );
-    }
-  }, []);
+  const [isLoading, setIsLoading] = useState(false);
 
   const onCheckout = async () => {
+    setIsLoading(true);
+
     const order = {
       eventTitle: event.title,
       eventId: event._id,
@@ -41,8 +32,19 @@ export const Checkout = ({
 
   return (
     <form action={onCheckout} method="post">
-      <Button type="submit" role="link" size="lg" className="button sm:w-fit">
-        {event.isFree ? "Get Ticket" : "Buy Ticket"}
+      <Button
+        type="submit"
+        role="link"
+        size="lg"
+        className="button sm:w-fit"
+        disabled={isLoading}
+        aria-disabled={isLoading}
+      >
+        {isLoading
+          ? "Redirecting..."
+          : event.isFree
+          ? "Get Ticket"
+          : "Buy Ticket"}
       </Button>
     </form>
   );
