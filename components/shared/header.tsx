@@ -27,7 +27,7 @@ export const Header = () => {
           </nav>
         </SignedIn>
 
-        <div className="flex w-32 justify-end gap-3">
+        <div className="flex w-64 items-center justify-end gap-3">
           <SignedIn>
             <UserButton afterSignOutUrl="/" />
             <MobileNav />
@@ -45,6 +45,20 @@ export const Header = () => {
               Login
             </Link>
           </SignedOut>
+
+          <Link
+            href="https://github.com/sanidhyy/evently"
+            target="_blank"
+            rel="noreferrer noopener"
+            title="Source Code"
+          >
+            <Image
+              src="/assets/images/github.svg"
+              alt="github"
+              height={25}
+              width={25}
+            />
+          </Link>
         </div>
       </div>
     </header>
