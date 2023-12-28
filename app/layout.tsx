@@ -1,4 +1,5 @@
 import { ClerkProvider } from "@clerk/nextjs";
+import { siteConfig } from "@/config/site";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import type { PropsWithChildren } from "react";
@@ -11,10 +12,7 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
-export const metadata: Metadata = {
-  title: "Evently",
-  description: "Evently is a platform for event management.",
-};
+export const metadata: Metadata = siteConfig;
 
 export default function AppLayout({ children }: PropsWithChildren) {
   return (
