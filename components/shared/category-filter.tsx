@@ -10,9 +10,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { formUrlQuery, removeKeysFromQuery } from "@/lib/utils";
 import { getAllCategories } from "@/lib/actions/category.actions";
 import type { ICategory } from "@/lib/database/models/category.model";
+import { formUrlQuery, removeKeysFromQuery } from "@/lib/utils";
 
 export const CategoryFilter = () => {
   const [categories, setCategories] = useState<ICategory[]>([]);

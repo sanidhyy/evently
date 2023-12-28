@@ -6,7 +6,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { getEventsByUser } from "@/lib/actions/event.actions";
 import { getOrdersByUser } from "@/lib/actions/order.actions";
 import { cn } from "@/lib/utils";
-import { IOrder } from "@/lib/database/models/order.model";
+import type { IOrder } from "@/lib/database/models/order.model";
 import { SearchParamProps } from "@/types";
 
 const Profile = async ({ searchParams }: SearchParamProps) => {
