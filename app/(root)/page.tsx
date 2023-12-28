@@ -7,7 +7,7 @@ import { Search } from "@/components/shared/search";
 import { buttonVariants } from "@/components/ui/button";
 import { getAllEvents } from "@/lib/actions/event.actions";
 import { cn } from "@/lib/utils";
-import { SearchParamProps } from "@/types";
+import type { SearchParamProps } from "@/types";
 
 export default async function Home({ searchParams }: SearchParamProps) {
   const page = Number(searchParams?.page) || 1;
@@ -41,7 +41,7 @@ export default async function Home({ searchParams }: SearchParamProps) {
                 buttonVariants({
                   size: "lg",
                 }),
-                "button w-full sm:w-fit",
+                "button w-full sm:w-fit"
               )}
             >
               Explore Now
