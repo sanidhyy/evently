@@ -18,7 +18,7 @@ export const NavItems = () => {
             key={link.route}
             className={cn(
               "flex-center p-medium-16 whitespace-nowrap",
-              isActive && "text-primary-500"
+              isActive && "text-primary-500",
             )}
           >
             <Link href={link.route}>{link.label}</Link>

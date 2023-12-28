@@ -155,9 +155,8 @@ export async function getOrdersByUser({
         },
       });
 
-    const ordersCount = await Order.distinct("event._id").countDocuments(
-      conditions
-    );
+    const ordersCount =
+      await Order.distinct("event._id").countDocuments(conditions);
 
     return {
       data: JSON.parse(JSON.stringify(orders)),

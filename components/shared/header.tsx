@@ -39,7 +39,7 @@ export const Header = () => {
                 buttonVariants({
                   size: "lg",
                 }),
-                "rounded-full"
+                "rounded-full",
               )}
             >
               Login

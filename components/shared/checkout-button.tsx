@@ -30,7 +30,7 @@ export const CheckoutButton = ({ event }: { event: IEvent }) => {
                 buttonVariants({
                   size: "lg",
                 }),
-                "button rounded-full"
+                "button rounded-full",
               )}
             >
               Get Tickets

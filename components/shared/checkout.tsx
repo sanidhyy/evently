@@ -43,8 +43,8 @@ export const Checkout = ({
         {isLoading
           ? "Redirecting..."
           : event.isFree
-          ? "Get Ticket"
-          : "Buy Ticket"}
+            ? "Get Ticket"
+            : "Buy Ticket"}
       </Button>
     </form>
   );

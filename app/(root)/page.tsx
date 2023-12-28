@@ -41,7 +41,7 @@ export default async function Home({ searchParams }: SearchParamProps) {
                 buttonVariants({
                   size: "lg",
                 }),
-                "button w-full sm:w-fit"
+                "button w-full sm:w-fit",
               )}
             >
               Explore Now

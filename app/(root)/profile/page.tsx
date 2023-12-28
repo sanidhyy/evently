@@ -32,7 +32,7 @@ const Profile = async ({ searchParams }: SearchParamProps) => {
               buttonVariants({
                 size: "lg",
               }),
-              "button hidden sm:flex"
+              "button hidden sm:flex",
             )}
           >
             Explore more events
@@ -62,7 +62,7 @@ const Profile = async ({ searchParams }: SearchParamProps) => {
               buttonVariants({
                 size: "lg",
               }),
-              "button hidden sm:flex"
+              "button hidden sm:flex",
             )}
           >
             Create new event
