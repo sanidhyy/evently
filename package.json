@@ -70,7 +70,7 @@
     }
   ],
   "dependencies": {
-    "@clerk/nextjs": "^4.28.1",
+    "@clerk/nextjs": "^4.29.3",
     "@hookform/resolvers": "^3.3.2",
     "@radix-ui/react-alert-dialog": "^1.0.5",
     "@radix-ui/react-checkbox": "^1.0.4",
