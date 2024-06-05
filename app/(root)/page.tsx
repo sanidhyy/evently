@@ -36,7 +36,7 @@ export default async function Home({ searchParams }: SearchParamProps) {
             </p>
 
             <Link
-              href="/events"
+              href="#events"
               className={cn(
                 buttonVariants({
                   size: "lg",
