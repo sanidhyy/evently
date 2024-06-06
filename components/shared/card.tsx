@@ -83,6 +83,23 @@ export const Card = ({ event, hasOrderLink, hidePrice }: CardProps) => {
               />
             </Link>
           )}
+
+          {hidePrice && (
+            <Link
+              href={event.url || ""}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="flex gap-2"
+            >
+              <p className="text-primary-500">Join Event</p>
+              <Image
+                src="/assets/icons/arrow.svg"
+                alt="search"
+                width={10}
+                height={10}
+              />
+            </Link>
+          )}
         </div>
       </div>
     </div>

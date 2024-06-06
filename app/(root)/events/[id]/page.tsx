@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import { CheckoutButton } from "@/components/shared/checkout-button";
 import { Collection } from "@/components/shared/collection";
@@ -95,14 +94,6 @@ const EventDetails = async ({
             <div className="flex flex-col gap-2">
               <p className="p-bold-20 text-gray-600">What you'll Learn:</p>
               <p className="p-medium-16 lg:p-regular-18">{event.description}</p>
-              <Link
-                href={event.url}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="p-medium-16 lg:p-regular-18 truncate text-primary-500 underline"
-              >
-                {event.url}
-              </Link>
             </div>
           </div>
         </div>
