@@ -9,7 +9,10 @@ import { cn } from "@/lib/utils";
 import type { IOrder } from "@/lib/database/models/order.model";
 import type { SearchParamProps } from "@/types";
 
-const Profile = async ({ searchParams }: SearchParamProps) => {
+const Profile = async ({
+  searchParams: promiseSearchParams,
+}: SearchParamProps) => {
+  const searchParams = await promiseSearchParams;
   const { sessionClaims } = auth();
   const userId = sessionClaims?.userId as string;
 
@@ -32,7 +35,7 @@ const Profile = async ({ searchParams }: SearchParamProps) => {
               buttonVariants({
                 size: "lg",
               }),
-              "button hidden sm:flex"
+              "button hidden sm:flex",
             )}
           >
             Explore more events
@@ -62,7 +65,7 @@ const Profile = async ({ searchParams }: SearchParamProps) => {
               buttonVariants({
                 size: "lg",
               }),
-              "button hidden sm:flex"
+              "button hidden sm:flex",
             )}
           >
             Create new event

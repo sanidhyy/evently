@@ -4,7 +4,10 @@ import { IOrderItem } from "@/lib/database/models/order.model";
 import { formatDateTime, formatPrice } from "@/lib/utils";
 import type { SearchParamProps } from "@/types";
 
-const Orders = async ({ searchParams }: SearchParamProps) => {
+const Orders = async ({
+  searchParams: promiseSearchParams,
+}: SearchParamProps) => {
+  const searchParams = await promiseSearchParams;
   const eventId = (searchParams?.eventId as string) || "";
   const searchText = (searchParams?.query as string) || "";
 
