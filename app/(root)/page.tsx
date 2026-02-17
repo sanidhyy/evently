@@ -9,7 +9,11 @@ import { getAllEvents } from "@/lib/actions/event.actions";
 import { cn } from "@/lib/utils";
 import type { SearchParamProps } from "@/types";
 
-export default async function Home({ searchParams }: SearchParamProps) {
+export default async function Home({
+  searchParams: promiseSearchParams,
+}: SearchParamProps) {
+  const searchParams = await promiseSearchParams;
+
   const page = Number(searchParams?.page) || 1;
   const searchText = (searchParams?.query as string) || "";
   const category = (searchParams?.category as string) || "";
@@ -41,7 +45,7 @@ export default async function Home({ searchParams }: SearchParamProps) {
                 buttonVariants({
                   size: "lg",
                 }),
-                "button w-full sm:w-fit"
+                "button w-full sm:w-fit",
               )}
             >
               Explore Now
