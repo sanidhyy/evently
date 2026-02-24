@@ -201,7 +201,7 @@ UPLOADTHING_APP_ID=XXXXXXXXX
 
 ## :wrench: Stats
 
-[![Stats for Evently](/.github/images/stats.svg "Stats for Evently")](https://pagespeed-insights-svg.glitch.me/?url=https://event-ly.vercel.app/ "Stats for Evently")
+[![Stats for Evently](/.github/images/stats.svg "Stats for Evently")](https://pagespeed.web.dev/analysis?url=https://event-ly.vercel.app/ "Stats for Evently")
 
 ## :raised_hands: Contribute
 
