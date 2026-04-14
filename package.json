@@ -87,7 +87,7 @@
     "lucide-react": "^0.574.0",
     "mongodb": "^6.3.0",
     "mongoose": "^8.9.5",
-    "next": "15.5.10",
+    "next": "15.5.15",
     "query-string": "^8.2.0",
     "react": "^19.2.4",
     "react-datepicker": "^4.24.0",
