@@ -234,7 +234,7 @@ Useful resources and dependencies that are used in Evently.
 - [lucide-react](https://www.npmjs.com/package/lucide-react): ^0.574.0
 - [mongodb](https://www.npmjs.com/package/mongodb): ^6.3.0
 - [mongoose](https://www.npmjs.com/package/mongoose): ^8.9.5
-- [next](https://www.npmjs.com/package/next): 15.5.10
+- [next](https://www.npmjs.com/package/next): 15.5.15
 - [postcss](https://www.npmjs.com/package/postcss): ^8
 - [query-string](https://www.npmjs.com/package/query-string): ^8.2.0
 - [react](https://www.npmjs.com/package/react): ^19.2.4
