@@ -44,6 +44,7 @@ export const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
     event && type === "Update"
       ? {
           ...event,
+          categoryId: event.category?._id ?? "",
           startDateTime: new Date(event.startDateTime),
           endDateTime: new Date(event.endDateTime),
         }
@@ -65,7 +66,7 @@ export const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
 
       if (!uploadedImages) return;
 
-      uploadedImageUrl = uploadedImages[0].url;
+      uploadedImageUrl = uploadedImages[0].ufsUrl;
     }
 
     if (type === "Create") {

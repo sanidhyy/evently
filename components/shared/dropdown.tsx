@@ -27,7 +27,7 @@ import type { ICategory } from "@/lib/database/models/category.model";
 
 type DropdownProps = {
   value?: string;
-  onChangeHandler?: () => void;
+  onChangeHandler?: (value: string) => void;
 };
 
 export const Dropdown = ({ onChangeHandler, value }: DropdownProps) => {
@@ -53,7 +53,7 @@ export const Dropdown = ({ onChangeHandler, value }: DropdownProps) => {
   }, []);
 
   return (
-    <Select onValueChange={onChangeHandler} defaultValue={value}>
+    <Select onValueChange={onChangeHandler} value={value ?? ""}>
       <SelectTrigger className="select-field">
         <SelectValue placeholder="Category" />
       </SelectTrigger>

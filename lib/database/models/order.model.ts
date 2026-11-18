@@ -1,4 +1,5 @@
 import { Schema, model, models, type Document } from "mongoose";
+import type { UserSummary } from "@/types";
 
 export interface IOrder extends Document {
   createdAt: Date;
@@ -8,11 +9,7 @@ export interface IOrder extends Document {
     _id: string;
     title: string;
   };
-  buyer: {
-    _id: string;
-    firstName: string;
-    lastName: string;
-  };
+  buyer: UserSummary;
 }
 
 export type IOrderItem = {

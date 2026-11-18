@@ -1,5 +1,9 @@
 import * as z from "zod";
 
+export const categoryIdSchema = z
+  .string()
+  .regex(/^[a-f\d]{24}$/i, "Please select a valid category.");
+
 export const eventFormSchema = z.object({
   title: z.string().min(3, "Title must be at least 3 characters."),
   description: z
@@ -13,7 +17,7 @@ export const eventFormSchema = z.object({
   imageUrl: z.string(),
   startDateTime: z.date(),
   endDateTime: z.date(),
-  categoryId: z.string(),
+  categoryId: categoryIdSchema,
   price: z.string(),
   isFree: z.boolean(),
   url: z.string().url(),

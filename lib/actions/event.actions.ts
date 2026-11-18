@@ -7,6 +7,7 @@ import Event from "@/lib/database/models/event.model";
 import User from "@/lib/database/models/user.model";
 import Category from "@/lib/database/models/category.model";
 import { handleError } from "@/lib/utils";
+import { categoryIdSchema } from "@/lib/validator";
 import type {
   CreateEventParams,
   UpdateEventParams,
@@ -16,8 +17,10 @@ import type {
   GetRelatedEventsByCategoryParams,
 } from "@/types";
 
-const getCategoryByName = async (name: string) => {
-  return Category.findOne({ name: { $regex: name, $options: "i" } });
+const getCategoryById = async (id: string) => {
+  return categoryIdSchema.safeParse(id).success
+    ? Category.exists({ _id: id })
+    : null;
 };
 
 const populateEvent = (query: any) => {
@@ -25,7 +28,7 @@ const populateEvent = (query: any) => {
     .populate({
       path: "organizer",
       model: User,
-      select: "_id firstName lastName",
+      select: "_id firstName lastName username",
     })
     .populate({ path: "category", model: Category, select: "_id name" });
 };
@@ -37,6 +40,9 @@ export async function createEvent({ userId, event, path }: CreateEventParams) {
 
     const organizer = await User.findById(userId);
     if (!organizer) throw new Error("Organizer not found");
+    if (!(await getCategoryById(event.categoryId))) {
+      throw new Error("Invalid category");
+    }
 
     const newEvent = await Event.create({
       ...event,
@@ -74,6 +80,9 @@ export async function updateEvent({ userId, event, path }: UpdateEventParams) {
     const eventToUpdate = await Event.findById(event._id);
     if (!eventToUpdate || eventToUpdate.organizer.toHexString() !== userId) {
       throw new Error("Unauthorized or event not found");
+    }
+    if (!(await getCategoryById(event.categoryId))) {
+      throw new Error("Invalid category");
     }
 
     const updatedEvent = await Event.findByIdAndUpdate(
@@ -114,13 +123,13 @@ export async function getAllEvents({
     const titleCondition = query
       ? { title: { $regex: query, $options: "i" } }
       : {};
-    const categoryCondition = category
-      ? await getCategoryByName(category)
-      : null;
+    if (category && !(await getCategoryById(category))) {
+      return { data: [], totalPages: 0 };
+    }
     const conditions = {
       $and: [
         titleCondition,
-        categoryCondition ? { category: categoryCondition._id } : {},
+        category ? { category } : {},
       ],
     };
 
