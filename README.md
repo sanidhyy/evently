@@ -232,9 +232,9 @@ Useful resources and dependencies that are used in Evently.
 - [@radix-ui/react-slot](https://www.npmjs.com/package/@radix-ui/react-slot): ^1.5.0
 - [@stripe/stripe-js](https://www.npmjs.com/package/@stripe/stripe-js): ^2.4.0
 - [@types/node](https://www.npmjs.com/package/@types/node): ^25.2.3
-- [@types/react](https://www.npmjs.com/package/@types/react): ^19.2.14
+- [@types/react](https://www.npmjs.com/package/@types/react): ^19
 - [@types/react-datepicker](https://www.npmjs.com/package/@types/react-datepicker): ^4.19.4
-- [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^19.2.3
+- [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^19
 - [@uploadthing/react](https://www.npmjs.com/package/@uploadthing/react): ^7.3.3
 - [@vercel/config](https://www.npmjs.com/package/@vercel/config): ^0.0.33
 - [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.6.2
@@ -246,9 +246,9 @@ Useful resources and dependencies that are used in Evently.
 - [next](https://www.npmjs.com/package/next): 16.4.6
 - [postcss](https://www.npmjs.com/package/postcss): ^8
 - [query-string](https://www.npmjs.com/package/query-string): ^8.2.0
-- [react](https://www.npmjs.com/package/react): ^19.2.4
+- [react](https://www.npmjs.com/package/react): ^19.3.1
 - [react-datepicker](https://www.npmjs.com/package/react-datepicker): ^4.24.0
-- [react-dom](https://www.npmjs.com/package/react-dom): ^19.2.4
+- [react-dom](https://www.npmjs.com/package/react-dom): ^19.3.1
 - [react-hook-form](https://www.npmjs.com/package/react-hook-form): ^7.71.1
 - [stripe](https://www.npmjs.com/package/stripe): ^20.3.1
 - [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^2.1.0
