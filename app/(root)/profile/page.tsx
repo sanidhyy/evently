@@ -1,4 +1,4 @@
-import { auth } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 import Link from "next/link";
 
 import { Collection } from "@/components/shared/collection";
@@ -13,7 +13,7 @@ const Profile = async ({
   searchParams: promiseSearchParams,
 }: SearchParamProps) => {
   const searchParams = await promiseSearchParams;
-  const { sessionClaims } = auth();
+  const { sessionClaims } = await auth();
   const userId = sessionClaims?.userId as string;
 
   const ordersPage = Number(searchParams?.ordersPage) || 1;
