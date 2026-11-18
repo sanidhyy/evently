@@ -30,16 +30,18 @@ export const CategoryFilter = () => {
   }, []);
 
   const onSelectCategory = (category: string) => {
+    const params = new URLSearchParams(searchParams.toString());
+    params.delete("page");
     let newUrl;
-    if (category.trim() && category !== "All") {
+    if (category.trim() && category !== "all") {
       newUrl = formUrlQuery({
-        params: searchParams.toString(),
+        params: params.toString(),
         key: "category",
         value: category,
       });
     } else {
       newUrl = removeKeysFromQuery({
-        params: searchParams.toString(),
+        params: params.toString(),
         keysToRemove: ["category"],
       });
     }
@@ -47,7 +49,10 @@ export const CategoryFilter = () => {
   };
 
   return (
-    <Select onValueChange={(value: string) => onSelectCategory(value)}>
+    <Select
+      value={searchParams.get("category") || "all"}
+      onValueChange={onSelectCategory}
+    >
       <SelectTrigger className="select-field">
         <SelectValue placeholder="Category" />
       </SelectTrigger>
@@ -57,8 +62,8 @@ export const CategoryFilter = () => {
         </SelectItem>
         {categories.map((category) => (
           <SelectItem
-            value={category.name}
-            key={category.id}
+            value={category._id}
+            key={category._id}
             className="select-item p-regular-14"
           >
             {category.name}
