@@ -44,7 +44,6 @@
 Here is the folder structure of this app.
 
 <!--- FOLDER_STRUCTURE_START --->
-
 ```bash
 evently/
   |- app/
@@ -75,15 +74,14 @@ evently/
   |- .gitignore
   |- bun.lock
   |- components.json
-  |- middleware.ts
-  |- next.config.js
+  |- next.config.ts
   |- package.json
   |- postcss.config.js
+  |- proxy.ts
   |- tailwind.config.ts
   |- tsconfig.json
   |- vercel.ts
 ```
-
 <!--- FOLDER_STRUCTURE_END --->
 
 <br />
@@ -223,9 +221,8 @@ You might encounter some bugs while using this app. You are more than welcome to
 Useful resources and dependencies that are used in Evently.
 
 <!--- DEPENDENCIES_START --->
-
-- [@clerk/nextjs](https://www.npmjs.com/package/@clerk/nextjs): ^4.31.5
-- [@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers): ^3.10.0
+- [@clerk/nextjs](https://www.npmjs.com/package/@clerk/nextjs): ^6.39.9
+- [@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers): ^5.2.2
 - [@radix-ui/react-alert-dialog](https://www.npmjs.com/package/@radix-ui/react-alert-dialog): ^1.1.15
 - [@radix-ui/react-checkbox](https://www.npmjs.com/package/@radix-ui/react-checkbox): ^1.3.3
 - [@radix-ui/react-dialog](https://www.npmjs.com/package/@radix-ui/react-dialog): ^1.1.15
@@ -238,7 +235,7 @@ Useful resources and dependencies that are used in Evently.
 - [@types/react](https://www.npmjs.com/package/@types/react): ^19.2.14
 - [@types/react-datepicker](https://www.npmjs.com/package/@types/react-datepicker): ^4.19.4
 - [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^19.2.3
-- [@uploadthing/react](https://www.npmjs.com/package/@uploadthing/react): ^6.0.2
+- [@uploadthing/react](https://www.npmjs.com/package/@uploadthing/react): ^7.3.3
 - [@vercel/config](https://www.npmjs.com/package/@vercel/config): ^0.0.33
 - [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.6.2
 - [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.1
@@ -246,7 +243,7 @@ Useful resources and dependencies that are used in Evently.
 - [lucide-react](https://www.npmjs.com/package/lucide-react): ^0.574.0
 - [mongodb](https://www.npmjs.com/package/mongodb): ^6.3.0
 - [mongoose](https://www.npmjs.com/package/mongoose): ^8.9.5
-- [next](https://www.npmjs.com/package/next): 15.5.24
+- [next](https://www.npmjs.com/package/next): 16.4.6
 - [postcss](https://www.npmjs.com/package/postcss): ^8
 - [query-string](https://www.npmjs.com/package/query-string): ^8.2.0
 - [react](https://www.npmjs.com/package/react): ^19.2.4
@@ -254,12 +251,11 @@ Useful resources and dependencies that are used in Evently.
 - [react-dom](https://www.npmjs.com/package/react-dom): ^19.2.4
 - [react-hook-form](https://www.npmjs.com/package/react-hook-form): ^7.71.1
 - [stripe](https://www.npmjs.com/package/stripe): ^20.3.1
-- [svix](https://www.npmjs.com/package/svix): ^2.10.0
 - [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^2.1.0
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^3.3.0
 - [tailwindcss-animate](https://www.npmjs.com/package/tailwindcss-animate): ^1.0.7
 - [typescript](https://www.npmjs.com/package/typescript): ^5.9.3
-- [uploadthing](https://www.npmjs.com/package/uploadthing): ^6.1.0
+- [uploadthing](https://www.npmjs.com/package/uploadthing): ^7.7.4
 - [zod](https://www.npmjs.com/package/zod): ^4.3.6
 
 <!--- DEPENDENCIES_END --->
