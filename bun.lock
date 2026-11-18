@@ -24,7 +24,7 @@
         "mongoose": "^8.9.5",
         "next": "16.4.6",
         "query-string": "^8.2.0",
-        "react": "^19.2.4",
+        "react": "^19.3.1",
         "react-datepicker": "^4.24.0",
         "react-dom": "^19.3.1",
         "react-hook-form": "^7.71.1",
@@ -36,9 +36,9 @@
       },
       "devDependencies": {
         "@types/node": "^25.2.3",
-        "@types/react": "^19.2.14",
+        "@types/react": "^19",
         "@types/react-datepicker": "^4.19.4",
-        "@types/react-dom": "^19.3.0",
+        "@types/react-dom": "^19",
         "autoprefixer": "^10.6.2",
         "postcss": "^8",
         "tailwindcss": "^3.3.0",
@@ -485,7 +485,7 @@
 
     "queue-microtask": ["queue-microtask@1.2.3", "", {}, "sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A=="],
 
-    "react": ["react@19.2.4", "", {}, "sha512-9nfp2hYpCwOjAN+8TZFGhtWEwgvWHXqESH8qT89AT/lWklpLON22Lc8pEtnpsZz7VmawabSU0gCjnj8aC0euHQ=="],
+    "react": ["react@19.3.1", "", {}, "sha512-QNhWdt7nrgVWWQG58QuGsAR3jv3Hbe4mb4vz7w2csnHavciZJgda1CPNaldF6eVxv90ud3jUXpKlHL69gO38yw=="],
 
     "react-datepicker": ["react-datepicker@4.25.0", "", { "dependencies": { "@popperjs/core": "^2.11.8", "classnames": "^2.2.6", "date-fns": "^2.30.0", "prop-types": "^15.7.2", "react-onclickoutside": "^6.13.0", "react-popper": "^2.3.0" }, "peerDependencies": { "react": "^16.9.0 || ^17 || ^18", "react-dom": "^16.9.0 || ^17 || ^18" } }, "sha512-zB7CSi44SJ0sqo8hUQ3BF1saE/knn7u25qEMTO1CQGofY1VAKahO8k9drZtp0cfW1DMfoYLR3uSY1/uMvbEzbg=="],
 
