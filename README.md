@@ -44,6 +44,7 @@
 Here is the folder structure of this app.
 
 <!--- FOLDER_STRUCTURE_START --->
+
 ```bash
 evently/
   |- app/
@@ -82,6 +83,7 @@ evently/
   |- tsconfig.json
   |- vercel.ts
 ```
+
 <!--- FOLDER_STRUCTURE_END --->
 
 <br />
@@ -115,9 +117,9 @@ MONGODB_URI="mongodb+srv://<your-db-username>:<your-db-password>@<your-cluster-u
 # clerk webhook secret
 CLERK_WEBHOOK_SECRET=whsec_XXXXXXXXXXXXXXXXXXXX
 
-# uploadthing secret & app id
-UPLOADTHING_SECRET=sk_live_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-UPLOADTHING_APP_ID=xxxxxxxx
+# uploadthing app id and token
+UPLOADTHING_APP_ID=xxxxxxxxxx
+UPLOADTHING_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 # stripe keys
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -171,12 +173,13 @@ To obtain Uploadthing keys, follow these steps:
    - Log in to your Uploadthing account.
    - Navigate to the dashboard and create a new application.
 
-3. **Get Secret and App ID:**
-   - Once the application is created, find or generate the Secret and App ID.
+3. **Get App ID and Token:**
+   - Once the application is created, go to API Keys tab and generate a new token and also copy app id.
 
 ```bash
-UPLOADTHING_SECRET=sk_live_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-UPLOADTHING_APP_ID=XXXXXXXXX
+# uploadthing app id and token
+UPLOADTHING_APP_ID=xxxxxxxxxx
+UPLOADTHING_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
 11. Open terminal in root directory. Run `npm install --legacy-peer-deps` or `yarn install --legacy-peer-deps`.
@@ -220,6 +223,7 @@ You might encounter some bugs while using this app. You are more than welcome to
 Useful resources and dependencies that are used in Evently.
 
 <!--- DEPENDENCIES_START --->
+
 - [@clerk/nextjs](https://www.npmjs.com/package/@clerk/nextjs): ^4.31.5
 - [@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers): ^3.10.0
 - [@radix-ui/react-alert-dialog](https://www.npmjs.com/package/@radix-ui/react-alert-dialog): ^1.1.15
