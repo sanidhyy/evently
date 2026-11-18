@@ -236,7 +236,7 @@ Useful resources and dependencies that are used in Evently.
 - [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^19.2.3
 - [@uploadthing/react](https://www.npmjs.com/package/@uploadthing/react): ^6.0.2
 - [@vercel/config](https://www.npmjs.com/package/@vercel/config): ^0.0.33
-- [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.4.24
+- [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.6.2
 - [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.1
 - [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
 - [lucide-react](https://www.npmjs.com/package/lucide-react): ^0.574.0
