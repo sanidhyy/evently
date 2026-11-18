@@ -228,7 +228,7 @@ Useful resources and dependencies that are used in Evently.
 - [@radix-ui/react-label](https://www.npmjs.com/package/@radix-ui/react-label): ^2.1.8
 - [@radix-ui/react-select](https://www.npmjs.com/package/@radix-ui/react-select): ^2.2.6
 - [@radix-ui/react-separator](https://www.npmjs.com/package/@radix-ui/react-separator): ^1.1.8
-- [@radix-ui/react-slot](https://www.npmjs.com/package/@radix-ui/react-slot): ^1.2.4
+- [@radix-ui/react-slot](https://www.npmjs.com/package/@radix-ui/react-slot): ^1.5.0
 - [@stripe/stripe-js](https://www.npmjs.com/package/@stripe/stripe-js): ^2.4.0
 - [@types/node](https://www.npmjs.com/package/@types/node): ^25.2.3
 - [@types/react](https://www.npmjs.com/package/@types/react): ^19.2.14
