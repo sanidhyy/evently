@@ -250,7 +250,7 @@ Useful resources and dependencies that are used in Evently.
 - [react-dom](https://www.npmjs.com/package/react-dom): ^19.2.4
 - [react-hook-form](https://www.npmjs.com/package/react-hook-form): ^7.71.1
 - [stripe](https://www.npmjs.com/package/stripe): ^20.3.1
-- [svix](https://www.npmjs.com/package/svix): ^1.85.0
+- [svix](https://www.npmjs.com/package/svix): ^2.10.0
 - [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^2.1.0
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^3.3.0
 - [tailwindcss-animate](https://www.npmjs.com/package/tailwindcss-animate): ^1.0.7
