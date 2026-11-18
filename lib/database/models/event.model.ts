@@ -1,4 +1,5 @@
 import { type Document, Schema, model, models } from "mongoose";
+import type { UserSummary } from "@/types";
 
 export interface IEvent extends Document<string> {
   title: string;
@@ -12,7 +13,7 @@ export interface IEvent extends Document<string> {
   isFree: boolean;
   url?: string;
   category: { _id: string; name: string };
-  organizer: { _id: string; firstName: string; lastName: string };
+  organizer: UserSummary;
 }
 
 const EventSchema = new Schema({

@@ -1,4 +1,11 @@
 // ====== USER PARAMS
+export type UserSummary = {
+  _id: string;
+  firstName?: string | null;
+  lastName?: string | null;
+  username?: string | null;
+};
+
 export type CreateUserParams = {
   clerkId: string;
   firstName: string;
@@ -87,11 +94,7 @@ export type Event = {
   startDateTime: Date;
   endDateTime: Date;
   url: string;
-  organizer: {
-    _id: string;
-    firstName: string;
-    lastName: string;
-  };
+  organizer: UserSummary;
   category: {
     _id: string;
     name: string;

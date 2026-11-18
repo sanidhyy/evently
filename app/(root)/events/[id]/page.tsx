@@ -6,7 +6,7 @@ import {
   getEventById,
   getRelatedEventsByCategory,
 } from "@/lib/actions/event.actions";
-import { formatDateTime } from "@/lib/utils";
+import { formatDateTime, getUserDisplayName } from "@/lib/utils";
 import type { SearchParamProps } from "@/types";
 
 const EventDetails = async ({ params, searchParams }: SearchParamProps) => {
@@ -50,7 +50,7 @@ const EventDetails = async ({ params, searchParams }: SearchParamProps) => {
                 <p className="p-medium-18 ml-2 mt-2 sm:mt-0">
                   by{" "}
                   <span className="text-primary-500">
-                    {event.organizer.firstName} {event.organizer.lastName}
+                    {getUserDisplayName(event.organizer, "Organizer")}
                   </span>
                 </p>
               </div>

@@ -3,10 +3,18 @@ import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import qs from "query-string";
 
-import type { UrlQueryParams, RemoveUrlQueryParams } from "@/types";
+import type { UrlQueryParams, RemoveUrlQueryParams, UserSummary } from "@/types";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
+}
+
+export function getUserDisplayName(
+  user: Pick<UserSummary, "firstName" | "lastName" | "username">,
+  fallback = "User",
+) {
+  const fullName = `${user.firstName ?? ""} ${user.lastName ?? ""}`.trim();
+  return fullName || user.username?.trim() || fallback;
 }
 
 export const formatDateTime = (dateString: Date) => {

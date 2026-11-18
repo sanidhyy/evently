@@ -108,7 +108,37 @@ export async function getOrdersByEvent({
           eventTitle: "$event.title",
           eventId: "$event._id",
           buyer: {
-            $concat: ["$buyer.firstName", " ", "$buyer.lastName"],
+            $let: {
+              vars: {
+                fullName: {
+                  $trim: {
+                    input: {
+                      $concat: [
+                        { $ifNull: ["$buyer.firstName", ""] },
+                        " ",
+                        { $ifNull: ["$buyer.lastName", ""] },
+                      ],
+                    },
+                  },
+                },
+                username: {
+                  $trim: { input: { $ifNull: ["$buyer.username", ""] } },
+                },
+              },
+              in: {
+                $cond: [
+                  { $ne: ["$$fullName", ""] },
+                  "$$fullName",
+                  {
+                    $cond: [
+                      { $ne: ["$$username", ""] },
+                      "$$username",
+                      "Buyer",
+                    ],
+                  },
+                ],
+              },
+            },
           },
         },
       },
@@ -151,7 +181,7 @@ export async function getOrdersByUser({
         populate: {
           path: "organizer",
           model: User,
-          select: "_id firstName lastName",
+          select: "_id firstName lastName username",
         },
       });
 
