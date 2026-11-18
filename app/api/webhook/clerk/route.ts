@@ -40,11 +40,13 @@ export async function POST(req: Request) {
 
   // Verify the payload with the headers
   try {
-    evt = wh.verify(body, {
+    wh.verify(body, {
       "svix-id": svix_id,
       "svix-timestamp": svix_timestamp,
       "svix-signature": svix_signature,
-    }) as WebhookEvent;
+    });
+
+    evt = JSON.parse(body) as WebhookEvent;
   } catch (err) {
     console.error("Error verifying webhook:", err);
     return new Response("Error occured", {
